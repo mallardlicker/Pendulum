@@ -2,7 +2,7 @@
 # -> A class which stores any physics system that will be simulated.
 # Author: Justin Bunting
 # Created: 2026/04/02
-# Last Modified: 2026/04/12 20:41
+# Last Modified: 2026/04/12 21:58
 
 
 
@@ -121,15 +121,15 @@ class PhysicsSystem():
 						vals = [sum(vals)]
 					elif mod == 'sum2': # sum every other value together
 						vals = [sum(vals[::2]), sum(vals[1::2])]
+					elif mod == 'rth2xy': 
+						vals = [(r*sin(th), -r*cos(th)) for r, th in zip(vals[::2], vals[1::2])]
+						vals = [item for subtup in vals for item in subtup]
 					elif isinstance(mod, tuple):
-						if mod[0] == 'a2pos': # angle to position (mod[1] is the length)
-							l = mod[1]
-							vals = [(l*cos(val), l*sin(val)) for val in vals]
-							vals = [item for subtup in vals for item in subtup]
-						elif mod[0] == 'a2posVert': # angle to position (mod[i] is the length)
+						if 'a2pos' in mod[0]: # angle to position (mod[1] is the length)
+							vert = 'Vert' in mod[0]
 							if len(mod) == 2:
 								l = mod[1]
-								vals = [(l*sin(val), -l*cos(val)) for val in vals]
+								vals = [(l*sin(val), -l*cos(val)) for val in vals] if vert else [(l*cos(val), l*sin(val)) for val in vals]
 								vals = [item for subtup in vals for item in subtup]
 							else:
 								tmp = []
