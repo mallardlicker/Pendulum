@@ -2,14 +2,13 @@
 # -> Attempt to create a pendulum simulation in pyglet.
 # Author: Justin Bunting
 # Created: 2026/03/30
-# Last Modified: 2026/04/12 21:03
+# Last Modified: 2026/04/12 21:12
 
 
 from math import sin, cos, tan, radians, degrees
 
 import pyglet
 from pyglet.window import key, mouse
-# from pyglet import shapes
 
 from Shapes import *
 from System import *

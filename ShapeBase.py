@@ -1,8 +1,8 @@
 # ShapeBase.py
-# -> The base classes Shape and MultiShape used to construct simple, renderable shapes.
+# -> The base classes Shape and MultiShape use to construct simple, renderable shapes.
 # Author: Justin Bunting
 # Created: 2026/04/04
-# Last Modified: 2026/04/04 12:55
+# Last Modified: 2026/04/12 21:13
 
 
 from abc import ABC, abstractmethod

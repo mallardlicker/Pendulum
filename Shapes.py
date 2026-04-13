@@ -1,8 +1,8 @@
-# Point.py
-# -> A simple point class that is render-able by pyglet.
+# Shapes.py
+# -> Implementations of ShapeBase for render-able Shapes.
 # Author: Justin Bunting
 # Created: 2026/03/30
-# Last Modified: 2026/04/12 20:31
+# Last Modified: 2026/04/12 21:12
 
 
 from math import degrees, atan2
