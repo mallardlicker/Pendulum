@@ -2,7 +2,7 @@
 # -> A class which stores any physics system that will be simulated.
 # Author: Justin Bunting
 # Created: 2026/04/02
-# Last Modified: 2026/04/13 08:45
+# Last Modified: 2026/04/16 22:45
 
 
 
@@ -123,7 +123,7 @@ class PhysicsSystem():
 						vals = [sum(vals)]
 					elif mod == 'sum2': # sum every other value together
 						vals = [sum(vals[::2]), sum(vals[1::2])]
-					elif mod == 'rth2xy': 
+					elif mod == 'rth2xy': # TODO: this should have 'vert' check as well
 						vals = [(r*sin(th), -r*cos(th)) for r, th in zip(vals[::2], vals[1::2])]
 						vals = [item for subtup in vals for item in subtup]
 					elif isinstance(mod, tuple):
@@ -138,7 +138,7 @@ class PhysicsSystem():
 								for i in range(1, len(mod)):
 									l = mod[i]
 									val = vals[i-1]
-									tmp.extend([l*sin(val), -l*cos(val)])
+									tmp.extend([l*sin(val), -l*cos(val)]) if vert else tmp.extend([l*cos(val), l*sin(val)])
 								vals = tmp
 						elif mod[0] == 'offsetPos': # offset a position
 							offset = mod[1]

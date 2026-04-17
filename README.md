@@ -8,7 +8,7 @@ Quick coding of derived ODEs: basically building on functionality along the way,
 
 Uses the [Pyglet](https://github.com/pyglet/pyglet) library ([installation instructions](https://pyglet.readthedocs.io/en/latest/programming_guide/installation.html)).
 
-Ensure [Pyglet](https://github.com/pyglet/pyglet) is installed, as well as python3, and run the main file to view the simulations.
+Ensure [Pyglet](https://github.com/pyglet/pyglet) is installed, as well as python3, and run the main file to view the simulations (you may also need common libraries such as [Scipy](https://github.com/scipy/scipy)).
 ```bash
 python3 InteractPhysicsSim.py
 ```
